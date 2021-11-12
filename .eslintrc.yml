@@ -1,0 +1,40 @@
+---
+  root: true
+
+  parser: '@typescript-eslint/parser'
+  extends:
+    - eslint:recommended
+    - plugin:@typescript-eslint/eslint-recommended
+    - plugin:@typescript-eslint/recommended
+    - prettier
+    - plugin:prettier/recommended
+
+  plugins:
+    - '@typescript-eslint'
+
+  env:
+    commonjs: true
+    es6: true
+    node: true
+    jest: true
+
+  parserOptions:
+    ecmaVersion: 2019
+    sourceType: module
+
+  ignorePatterns:
+    - node_modules/
+    - coverage
+    - dist
+  rules:
+    linebreak-style:
+      - error
+      - unix
+    quotes:
+      - error
+      - single
+    semi:
+      - error
+      - always
+    '@typescript-eslint/camelcase':
+      - off

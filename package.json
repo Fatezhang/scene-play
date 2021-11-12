@@ -1,0 +1,56 @@
+{
+  "name": "scene-play",
+  "version": "1.0.0",
+  "description": "An online game for your team to play together.",
+  "main": "index.tsx",
+  "repository": "git@github.com:Fatezhang/scene-play.git",
+  "author": "zhangjiahengpoping@gmail.com",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.16.0",
+    "@types/jest": "^27.0.2",
+    "@types/node": "^16.11.7",
+    "@types/react": "^17.0.34",
+    "@types/react-dom": "^17.0.11",
+    "@types/styled-components": "^5.1.15",
+    "@typescript-eslint/eslint-plugin": "^5.3.1",
+    "@typescript-eslint/parser": "^5.3.1",
+    "@testing-library/dom": "7.31.2",
+    "@testing-library/jest-dom": "5.14.1",
+    "@testing-library/react": "11.2.7",
+    "@testing-library/react-hooks": "6.0.0",
+    "@testing-library/user-event": "13.2.1",
+    "babel-preset-react": "^7.0.0-beta.3",
+    "eslint": "^8.2.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "husky": "^7.0.4",
+    "jest": "^27.3.1",
+    "parcel-bundler": "^1.12.5",
+    "prettier": "^2.4.1",
+    "ts-jest": "^27.0.7",
+    "tsc": "^2.0.3"
+  },
+  "dependencies": {
+    "parcel": "^2.0.1",
+    "prop-types": "^15.7.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "styled-components": "^5.1.15",
+    "typescript": "^4.4.4"
+  },
+  "scripts": {
+    "test": "jest --no-cache --coverage --verbose --env=node",
+    "test:watch": "jest --watch --no-cache --coverage --verbose --env=node",
+    "lint": "eslint --ext ts,tsx,js,jsx src/",
+    "lint-fix": "eslint --fix --ext ts,tsx,js,jsx src/",
+    "start": "rm -rf dist && parcel public/index.html --no-cache",
+    "build": "parcel build public/index.html --public-url ./ -d build"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint-fix",
+      "pre-push": "yarn test"
+    }
+  }
+}
