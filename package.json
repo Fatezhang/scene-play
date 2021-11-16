@@ -2,10 +2,13 @@
   "name": "scene-play",
   "version": "1.0.0",
   "description": "An online game for your team to play together.",
-  "main": "index.tsx",
+  "main": "src/index.tsx",
   "repository": "git@github.com:Fatezhang/scene-play.git",
   "author": "zhangjiahengpoping@gmail.com",
   "license": "MIT",
+  "engines": {
+    "node": "16"
+  },
   "devDependencies": {
     "@babel/core": "^7.16.0",
     "@types/jest": "^27.0.2",
@@ -26,13 +29,13 @@
     "eslint-plugin-prettier": "^4.0.0",
     "husky": "^7.0.4",
     "jest": "^27.3.1",
-    "parcel-bundler": "^1.12.5",
     "prettier": "^2.4.1",
     "ts-jest": "^27.0.7",
     "tsc": "^2.0.3"
   },
   "dependencies": {
     "parcel": "^2.0.1",
+    "parcel-bundler": "^1.12.5",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -45,7 +48,7 @@
     "lint": "eslint --ext ts,tsx,js,jsx src/",
     "lint-fix": "eslint --fix --ext ts,tsx,js,jsx src/",
     "start": "rm -rf dist && parcel public/index.html --no-cache",
-    "build": "parcel build public/index.html --public-url ./ -d build"
+    "heroku-postbuild": "parcel build public/index.html"
   },
   "husky": {
     "hooks": {
